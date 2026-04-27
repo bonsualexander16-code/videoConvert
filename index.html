@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Project Title | Your Professional Catchphrase</title>
+    <meta name="description" content="Convert video to audio , convert mp4 to mp3, audio hub , bonsu projects , video converter">
+    <meta name="keywords" content="relevant, keywords, for, search, engines">
+    <meta name="author" content="Your Name or Company">
+
+    <meta property="og:title" content="mp4-mp3">
+    <meta property="og:description" content="Sharing description for Facebook/LinkedIn.">
+    <meta property="og:image" content="assets/images/og-image.jpg">
+    <meta property="og:url" content="https://www.yourdomain.com">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+    <link rel="stylesheet" href="css/reset.css"> <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+</head>
+<body>
+
+   <header>
+           <div class="logo">
+               <img src="video-camera.png" alt="logo"/>
+               <h1>     To     </h1>
+               <img src="headphone.png" alt="logo"/>
+           </div>
+   </header>
+   
+   <div>
+       <p id="p">
+           Convert Video files into  audio    formats and add image as audio covers.Do video files size's  must be at least less than 15MB for better perfomance
+       </p>
+   </div>
+   
+   <form id="uploadForm" action="http://localhost:2000/convert" enctype="multipart/form-data"
+   method="post"autocomplete="on">
+       <div>
+         <label>Input video file</label><br>
+         <input type="file" name="video" accept="video/*" required/>
+       </div>
+       <div>
+           <label>Input image file</label><br>
+           <input type="file" name="picture" accept="image/*" required/>
+       </div>
+       <div>
+           <label>Name for new file</label><br>
+           <input type="text" name="filename" placeholder="enter name for your new file" required/>
+       </div>
+      <input type="submit" value="convert"/>
+   </form>
+   
+   <p id="status">updates shows here</p>
+
+    <script src="index.js" defer></script>
+</body>
+</html>
