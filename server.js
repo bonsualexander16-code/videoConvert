@@ -5,6 +5,24 @@ const ffmpeg = require("fluent-ffmpeg") ;
 const fs = require("fs") ;
 const path = require("path") ;
 const app = express() ;
+const PORT = process.env.PORT || 3000 ;
+
+// 1. Define your folder paths
+const uploads = path.join(__dirname, 'uploads')
+const output = path.join(__dirname, 'output')
+
+// 2. List of all folders you need
+const foldersToCreate = [uploads, output] ;
+
+// 3. Loop and create if e no dey
+foldersToCreate.forEach(dir => {
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true })
+    console.log(`Folder created: ${dir}`)
+  } else {
+    console.log(`Folder already dey: ${dir}`)
+  }
+})
 
 app.use(cors()) ;
 app.use(express.static("public")) ;
@@ -59,6 +77,6 @@ app.post("/convert" , upload.fields([{name : "video"} , {name : 'picture'}]) , (
       }) ;
 })
 
-app.listen(2000 , ()=>{
+app.listen(PORT , ()=>{
     console.log("Server is Running...") ; 
 })
