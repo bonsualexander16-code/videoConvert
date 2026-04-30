@@ -7,7 +7,7 @@
 
     <title>Project Title | Your Professional Catchphrase</title>
     <meta name="description" content="Convert video to audio , convert mp4 to mp3, audio hub , bonsu projects , video converter">
-    <meta name="keywords" content="relevant, keywords, for, search, engines">
+    <meta name="keywords" content="mp4 convertor,music download,create audio from video, audio maker, generate audio">
     <meta name="author" content="Your Name or Company">
 
     <meta property="og:title" content="mp4-mp3">
@@ -35,7 +35,8 @@
    
    <div>
        <p id="p">
-           Convert Video files into  audio    formats and add image as audio covers.Do video files size's  must be at least less than 15MB for better perfomance
+Convert Video files into audio formats and add image as audio covers. 
+Video file size must be less than 15MB for better performance.
        </p>
    </div>
    
@@ -43,11 +44,15 @@
    method="post"autocomplete="on">
        <div>
          <label>Input video file</label><br>
-         <input type="file" name="video" accept="video/*" required/>
+         <input type="file" id="vidFile" name="video" accept="video/*" hidden required/>
+         <video src="" id="vid" hidden></video>
+         <button type="button" onclick="vidFile.click()" style="padding:10px ;">Add Video File</button>
        </div>
        <div>
            <label>Input image file</label><br>
-           <input type="file" name="picture" accept="image/*" required/>
+           <input type="file" id="imgFile" hidden  name="picture" accept="image/*" required/>
+           <img id="img" hidden/>
+           <button type="button" onclick="imgFile.click()" style="padding:10px">Add Image File</button>
        </div>
        <div>
            <label>Name for new file</label><br>
@@ -57,6 +62,36 @@
    </form>
    
    <p id="status">updates shows here</p>
+   <script>
+        const imgFile = document.getElementById("imgFile");
+  const img = document.getElementById("img");
+
+  const vidFile = document.getElementById("vidFile");
+  const vid = document.getElementById("vid");
+
+  // VOMIT 1: LISTENERS DEY OUTSIDE — E GO RUN ONCE ONLY
+  imgFile.addEventListener("change", () => {
+      const file = imgFile.files[0];
+      if (file) {
+          console.log('Image selected:', file.name);
+          const url = URL.createObjectURL(file);
+          img.src = url;
+          img.hidden = false;
+          img.onload = () => URL.revokeObjectURL(url); // Free memory
+      }
+  });
+
+  vidFile.addEventListener("change", () => {
+      const file = vidFile.files[0];
+      if (file) {
+          console.log('Video selected:', file.name);
+          const url = URL.createObjectURL(file);
+          vid.src = url;
+          vid.hidden = false;
+          vid.onloadeddata = () => URL.revokeObjectURL(url); // Free memory
+      }
+  });
+   </script>
 
     <script src="index.js" defer></script>
 </body>
