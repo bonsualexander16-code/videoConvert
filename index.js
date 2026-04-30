@@ -9,7 +9,7 @@ form.addEventListener("submit", async (e) => {
     statusText.textContent = "Uploading and converting...";
 
     try {
-        const response = await fetch("http://localhost:2000/convert", {
+        const response = await fetch("https://videoconvert-3.onrender.com/convert", {
             method: "POST",
             body: formData
         });
