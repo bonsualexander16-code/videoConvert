@@ -77,6 +77,10 @@ app.post("/convert" , upload.fields([{name : "video"} , {name : 'picture'}]) , (
       }) ;
 })
 
+app.get("/" , (req , res)=>{
+  res.send("Hello from my Server");
+})
+
 app.listen(PORT , ()=>{
     console.log("Server is Running...") ; 
 })
