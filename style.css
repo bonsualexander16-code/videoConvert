@@ -68,7 +68,7 @@ header{
 
 form{
     margin: 30px;
-    padding: 10px;
+    padding: 20px;
     align-text :center ;
     box-shadow: 1px 2px 1pc black;
     background: transparent;
@@ -79,13 +79,13 @@ form img {
     width : 100%;
     object-fit:cover;
     margin: 10px;
-    height : calc(20vh - 20px) ;
+    height : 20vh ;
 }
 form video{
     width : 100%;
     object-fit:cover;
     margin: 10px;
-    height : calc(20vh - 20px) ;
+    height : 20vh ;
 }
 
 form input {
