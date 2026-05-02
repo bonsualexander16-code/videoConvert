@@ -87,14 +87,18 @@
             min-height: 100vh;
             max-width: 1200px;
         }
+
         
         .header{
+            position:sticky;
+            top:0;
+            z-index:1000px;
             border-bottom:solid 2px hsl(176, 73% , 40%);
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             background: none;
-            backdrop-filter: blur(200000px);
+            backdrop-filter: blur(10px);
         }
         
         .logo {
