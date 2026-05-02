@@ -1,69 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- ===== BASIC META ===== -->
     <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Project Title | Your Professional Catchphrase</title>
-    <meta name="description" content="Convert video to audio , convert mp4 to mp3, audio hub , bonsu projects , video converter">
-    <meta name="keywords" content="mp4 convertor,music download,create audio from video, audio maker, generate audio">
-    <meta name="author" content="Your Name or Company">
+    <!-- ==== SEO ==== -->
+    <title>XaGret HuBs</title>
+    <meta name="description" content="extract audio from video , video convertor to audio">
+    <meta name="keywords" content="extractor,convert video to audio, download video links">
+    <meta name="author" content="Bonsu Alexander Kwakye">
 
-    <meta property="og:title" content="mp4-mp3">
-    <meta property="og:description" content="Sharing description for Facebook/LinkedIn.">
-    <meta property="og:image" content="assets/images/og-image.jpg">
-    <meta property="og:url" content="https://www.yourdomain.com">
+    <!-- ===== SOCIAL MEDIA (Open Graph) ===== -->
+    <meta property="og:title" content="Your Website Title">
+    <meta property="og:description" content="Short description of your website">
+    <meta property="og:image" content="https://yourdomain.com/preview.jpg">
+    <meta property="og:url" content="https://bonsualexander16-code.github.io/vidCo">
+    <meta property="og:type" content="website">
+
+    <!-- ===== TWITTER CARD ===== -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Your Website Title">
+    <meta name="twitter:description" content="Short description of your website">
+    <meta name="twitter:image" content="https://https://bonsualexander16-code.github.io/vidCo/preview.jpg">
 
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <!-- ===== FAVICON ===== -->
+    <link rel="icon" href="https://bonsualexander16-code.github.io/videoConvert/headphone.png">
 
-    <link rel="stylesheet" href="css/reset.css"> <link rel="stylesheet" href="style.css">
-    
+    <!-- ===== MOBILE THEME COLOR ===== -->
+    <meta name="theme-color" content="blue">
+
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- ===== PRELOAD FONTS (optional) ===== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+
+    <!-- ===== STRUCTURED DATA (SEO BOOST) ===== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Your Website Name",
+        "url": "https://bonsualexander16-code.github.io/vidCo"
+    }
+    </script>
+    
+    <style>
+    
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial;
+    }
+    
+    @media (min-width: 768px) {
+    .nav {
+        position: static;
+        transform: none;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .links {
+        display: flex;
+        gap: 20px;
+    }
+
+    .links a {
+        border: none;
+    }
+
+    .handburger {
+        display: none; /* hide hamburger on desktop */
+    }
+}
+        body{
+            background: linear-gradient(#FFF30A, #FF0ACE,#0ADEFF );
+            display: flex;
+            flex-direction: column;
+            transition:all 10s ease-in-out;
+            min-height: 100vh;
+            max-width: 1200px;
+        }
+        
+        .header{
+            border-bottom:solid 2px hsl(176, 73% , 40%);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            background: none;
+            backdrop-filter: blur(200000px);
+        }
+        
+        .logo {
+            display: flex;
+            justify-content: center;
+            place-items: center;
+            padding-left: 10px;
+        }
+        
+        .logo h2 {
+            font-weight: bolder;
+            color: transparent;
+            font-size: clamp(2rem , 3rem , 3rem);
+            -webkit-text-stroke:2px black;
+        }
+        
+        .handburger{
+            display: flex;
+            place-items:center;
+            padding:10px 15px;
+            color:transparent;
+            -webkit-text-stroke:2px blue ;
+            font-weight:bold;
+            font-size:clamp(2rem , 2rem , 3rem);
+            transition: all 2s ease;
+        }
+        
+        .handburger:active{
+            transform: scale(2);
+        }
+        
+        .nav{
+            position: fixed;
+            top: 0;
+            transform: translateX(-100%);
+            text-align: center;
+            padding: 10px;
+            width:60%;
+            backdrop-filter: blur(5px);
+            transition: all 0.5s ease;
+            border:solid 1px #def;
+            height: 100vh;
+        }
+        .nav.active{
+            transform: translateX(2%);
+        }
+        
+        .nav h3 {
+            margin-bottom:20px;
+            font-size: 1.5rem;
+        }
+        
+        
+        .links a {
+            font-family: Arial , Sans-Serif;
+            font-weight: bolder;
+            font-size: 15px;
+            color:black;
+            text-decoration: none;
+            display: flex;
+            display: block;
+            margin-bottom: 20px;
+            border-bottom : solid blue 2px;
+        }
+        
+        .card {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            border:solid grey 0.5px;
+            border-radius:20px;
+            padding: 10px 15px ;
+            position: fixed;
+            bottom: 0;
+        }
+        
+        .card img {
+            width:60px;
+            height: 60px;
+            border-radius:50%;
+        }
+        .card .h3{
+            display: flex;
+            font-size: 20px;
+        }
+        main{
+            overflow-y: auto-scroll ;
+            text-align: center;
+            flex: 1;
+            padding: 5px 10px;
+        }
+        
+        form {
+            text-align: center;
+            margin-top:15px;
+        }
+        
+        form video{
+            width: 60%;
+            height: auto;
+            border-radius:10px;
+            margin:10px;
+        }
+        
+        form img{
+            width: 60%;
+            max-width: 400px;
+            border-radius:10px;
+            height: auto;
+            margin: 10px;
+        }
+        
+        form button{
+            width:90%;
+            padding: 10px 15px;
+            border:solid blue 2px;
+            background: transparent;
+            font-family: Arial , Sans-Serif;
+            font-weight: bold;
+            border-radius:30px;
+            font-size: 1.5rem;
+            margin-bottom:20px;
+            cursor:pointer;
+            max-width: 500px;
+        }
+        
+        
+
+        
+        form input{
+            width: 90%;
+            padding: 10px 15px;
+            margin: 10px;
+            border-radius:30px;
+            outline: none;
+            border:solid blue 2px;
+            background: transparent;
+            font-weight: bold;
+            font-size:1.5rem;
+            max-width: 500px;
+        }
+        
+      
+      .footer {
+    text-align: center;
+    padding: 15px;
+    border-top: 2px solid hsl(176, 73%, 40%);
+}
+    </style>
 </head>
+
 <body>
 
-   <header>
-           <div class="logo">
-               <img src="video-camera.png" alt="logo"/>
-               <h1>     To     </h1>
-               <img src="headphone.png" alt="logo"/>
-           </div>
-   </header>
-   
-   <div>
-       <p id="p">
-Convert Video files into audio formats and add image as audio covers. 
-Video file size must be less than 15MB for better performance.
-       </p>
-   </div>
-   
-   <form id="uploadForm" action="https://videoconvert-4.onrender.com/convert" enctype="multipart/form-data"
-   method="post"autocomplete="on">
-       <div>
-         <label>Input video file</label><br>
-         <input type="file" id="vidFile" name="video" accept="video/*" hidden required/>
-         <video src="" id="vid" hidden></video>
-         <button type="button" onclick="vidFile.click()" style="padding:10px ;">Add Video File</button>
-       </div>
-       <div>
-           <label>Input image file</label><br>
-           <input type="file" id="imgFile" hidden  name="picture" accept="image/*" required/>
-           <img id="img" hidden/>
-           <button type="button" onclick="imgFile.click()" style="padding:10px">Add Image File</button>
-       </div>
-       <div>
-           <label>Name for new file</label><br>
-           <input type="text" name="filename" placeholder="enter name for your new file" required/>
-       </div>
-      <input type="submit" value="convert"/>
-   </form>
-   
-   <p id="status">updates shows here</p>
-   <script>
-        const imgFile = document.getElementById("imgFile");
+    <!-- ===== HEADER ===== -->
+     <header class="header">
+         <div class="logo">
+             <h2>XaGret HuBs..</h2>
+         </div>
+         <div id="hand" class="handburger">
+             ☰
+         </div>
+     </header>
+     
+     <div id="nav" class="nav">
+         <h3>More..</h3>
+         <div class="links">
+          <a href="#">Add Image To Audios</a>
+          <a href="#">Merge Audio To Videos</a>
+          <a href="#">About</a>
+          <a href="#">Download Social Media Vidoes</a>
+         </div>
+         
+         <div id="card" class="card">
+             <img src="https://bonsualexander16-code.github.io/Me/bonsu's-picture-class.jpg" alt="bonsu alexander" />
+             <div>
+                <h3 class="h3">Bonsu Alexander</h3>
+                <p>Developer</p>
+             </div>
+
+         </div>
+     </div>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main>
+        <p>
+            Convert Video files into audio formats and add image as audio covers. Video file size must be less than 15MB for better performance.
+        </p>
+        <form id="uploadForm" action="https://videoconvert-3.onrender.com/convert" enctype="multipart/form-data" method="post">
+            
+
+            <div>
+             <h4>Add your video file</h4>
+              <input type="file" accept="video/*" id="vidFile" name="video"onplaying="true" required hidden/>
+              <video id="vid" hidden=""/></video>
+            <button onclick="vidFile.click()" type="button">Add Video</button>
+            </div>
+            <div>
+             <h4>Add your image file</h4>
+              <input type="file" accept="image/*" id="imgFile" name="picture" required hidden/>
+              <img id="img" hidden=""/>
+            <button onclick="imgFile.click()" type="button">Add Image</button>
+            </div>
+            <div>
+             <input type="text" id="text" required placeholder="add song title to your audio file"/>
+            </div>
+            <input type="submit" value="submit"/>
+
+        </form>
+        
+        <p id="status">updates shows here</p>
+    </main>
+    
+<footer class="footer">
+    <p>© 2026 Bonsu Jnr.XaGret HuBs. All rights reserved</p>
+</footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script>
+        let body = document.body ;
+        let nav = document.getElementById("nav") ;
+
+      
+      
+      const imgFile = document.getElementById("imgFile");
   const img = document.getElementById("img");
 
   const vidFile = document.getElementById("vidFile");
@@ -88,11 +343,43 @@ Video file size must be less than 15MB for better performance.
           const url = URL.createObjectURL(file);
           vid.src = url;
           vid.hidden = false;
-          vid.onloadeddata = () => URL.revokeObjectURL(url); // Free memory
+          //vid.onloadeddata = () => URL.revokeObjectURL(url); // Free memory
       }
   });
-   </script>
+      
+      
+        let handburger = document.getElementById("hand") ;
+        
+        handburger.addEventListener("click" , (e)=>{
+            nav.classList.toggle("active") ;
+            e.preventDefault() ;
+        })
+        let colors = ["#0ADEFF" ,"#FFF30A","#FF0ACE","#99DAFF" , "#F7FF99" , "#99E9FF" , "#99FFA8"] ;
+        let currentColor1 ;
+        let currentColor2 ;
+        let currentColor3 ;
+        
+        function changeColor(){
+            setInterval(()=>{
+                currentColor1 = Math.floor(Math.random() * colors.length) ;
+                currentColor2 = Math.floor(Math.random() * colors.length) ;
+                  currentColor3 = Math.floor(Math.random() * colors.length) ;
+                
+                body.style.background = `linear-gradient(${colors[currentColor1]}, ${colors[currentColor2]}, ${colors[currentColor3]})` ;
+                return ;
+            } , 5000) 
+        }
+        
+      changeColor();
+      
+      let card = document.getElementById("card");
+      
+      card.addEventListener("click"  , ()=>{
+          window.open("https://bonsualexander16-code.github.io/Me/")
+      })
+      
+    </script> 
+    <script src="https://bonsualexander16-code.github.io/videoConvert/index.js" defer></script>
 
-    <script src="index.js" defer></script>
 </body>
 </html>
